@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Shipment - Allians Shipping Co</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function trackPackage() {
+            const code = document.getElementById("trackCode").value.trim();
+            const details = document.getElementById("details");
+
+            if (code === "TR123456") {
+                details.innerHTML = `
+                    <h3>Status: In Transit 🟡</h3>
+                    <p>Current Location: Alabama</p>
+                    <h4>Shipment History:</h4>
+                    <ul>
+                        <li>June 25, 2025, 9:00 AM – Item received from shipper →</li>
+                        <li>June 25, 2025, 9:30 AM – Item departed from sorting facility in Florida →</li>
+                        <li>July 1, 2025, 7:45 PM – Item stopped at Alabama</li>
+                    </ul>
+                    <img src="package.jpg" alt="Package Image" style="width:200px;">
+                `;
+            } else if (code === "TR599652932") {
+                details.innerHTML = `
+                    <h3>Status: In Transit 🟡</h3>
+                    <p>Current Location: Virginia</p>
+                    <p><strong>Item:</strong> 10 boxes of Vintage case knife</p>
+                    <h4>Shipment History:</h4>
+                    <ul>
+                        <li>July 7, 2025, 7:00 AM – Item received →</li>
+                        <li>July 7, 2025, 7:10 AM – Item departed from a sorting facility in Virginia</li>
+                    </ul>
+                    <h4>Shipper:</h4>
+                    <p>
+                        Allians Company, Virginia<br>
+                        📞 +1 (864) 875‑2368<br>
+                        ✉️ Allians6@gmail.com
+                    </p>
+                    <h4>Recipient:</h4>
+                    <p>Big Terry<br>515 Valley Brook Ln<br>Greer, SC 29651, USA</p>
+                    <h4>Expected Delivery:</h4>
+                    <p>9th July 2025 (by end of day)</p>
+                    <img src="package.jpg" alt="Package Image" style="width:200px;">
+                `;
+            } else {
+                details.innerHTML = "<p>Tracking code not found. Please try again.</p>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Allians Shipping Co Logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="track.html">Track Shipment</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Track Your Shipment</h1>
+        <input type="text" id="trackCode" placeholder="Enter Tracking Code">
+        <button onclick="trackPackage()">Track</button>
+        <div id="details"></div>
+    </main>
+</body>
+</html>
