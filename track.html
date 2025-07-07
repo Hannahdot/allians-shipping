@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function trackPackage() {
-            const code = document.getElementById("trackCode").value;
+            const code = document.getElementById("trackCode").value.trim();
             const details = document.getElementById("details");
+
             if (code === "TR123456") {
                 details.innerHTML = `
                     <h3>Status: In Transit 🟡</h3>
@@ -19,6 +20,23 @@
                         <li>June 25, 2025, 9:30 AM – Item departed from sorting facility in Florida →</li>
                         <li>July 1, 2025, 7:45 PM – Item stopped at Alabama</li>
                     </ul>
+                    <img src="package.jpg" alt="Package Image" style="width:200px;">
+                `;
+            } else if (code === "TR599652932") {
+                details.innerHTML = `
+                    <h3>Status: In Transit 🟡</h3>
+                    <p>Current Location: Virginia</p>
+                    <h4>Shipment History:</h4>
+                    <ul>
+                        <li>July 7, 2025, 7:00 AM – Item received →</li>
+                        <li>July 7, 2025, 7:10 AM – Item departed from a sorting facility in Virginia</li>
+                    </ul>
+                    <h4>Shipper:</h4>
+                    <p>Allians Company, Virginia</p>
+                    <h4>Recipient:</h4>
+                    <p>Big Terry<br>515 Valley Brook Ln<br>Greer, SC 29651, USA</p>
+                    <h4>Expected Delivery:</h4>
+                    <p>9th July 2025 (by end of day)</p>
                     <img src="package.jpg" alt="Package Image" style="width:200px;">
                 `;
             } else {
